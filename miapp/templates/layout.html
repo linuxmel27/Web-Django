@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sitio Web con Django
+		{% block title %}
+			<!-- Titulo de cada pagina -->
+		{% endblock %}
+	</title>
+
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <div id="logotipo">
+            <!-- Logo Django -->
+            <img src="{% static 'images/logo.png' %}" />
+            <h1>Sitio web con Django</h1>
+        </div>
+    </header>
+
+    <nav>
+
+    <ul>
+         <li>
+            <a href="/index">Inicio</a>
+        </li>
+        <li>
+            <a href="/layout">Layout</a>
+        </li>
+        <li>
+            <a href="/hola_mundo">Hola Mundo</a>
+        </li>
+        <li>
+            <a href="/pagina">Pagina Pruebas</a>
+        </li>
+    </ul>
+
+    </nav>
+
+    <div id="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+	
+   
+    <div id="content">
+        <div class="box">
+            <h2 class="title">Titulo Prueba</h2>
+        {% block content %}
+            <<strong> Contenido del bloque original </strong>
+        {% endblock %}
+        </div>
+        
+    </div>
+
+    <hr>
+
+    <footer>
+    	Contenido con Django &copy; | Melvin  
+    </footer>
+
+</body>
+</html>
